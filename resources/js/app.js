@@ -7,7 +7,7 @@ import 'animate.css';
 import './myjquery.js';
 
 import $ from 'jquery';
-// window.$ = window.jQuery = $;
+window.$ = window.jQuery = $;
 
 import 'https://code.jquery.com/jquery-3.7.1.slim.min.js';
 import '@fortawesome/fontawesome-free/css/all.min.css';

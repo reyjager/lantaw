@@ -22,7 +22,7 @@ class PostController extends Controller
         $posts = Post::where('user_id', $userId)
             ->with('comments') // Eager load comments
             ->latest()
-            ->take(10)
+            // ->take(10)
             ->get();
 
         return view('post.index', compact('posts'));
@@ -54,7 +54,7 @@ class PostController extends Controller
             'user_id' => Auth::user()->user_id,
         ]);
 
-        return redirect()->route('content.post')->with('success', 'Post created successfully!');
+        return redirect()->route('post.index')->with('success', 'Post created successfully!');
     }
     public function generatePostId()
     {

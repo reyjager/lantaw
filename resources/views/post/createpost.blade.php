@@ -1,9 +1,9 @@
-<div class="card p-3">
-    @if (session('success'))
+<div class="card p-3 background-dark text-white bg-dark bg-opacity-50 text-white">
+    {{-- @if (session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
         </div>
-    @endif
+    @endif --}}
 
     <form action="{{ route('post.store') }}" method="POST">
         @csrf
@@ -13,7 +13,7 @@
             <label for="title">Title</label>
             <input type="text" id="title" name="title" class="form-control" value="{{ old('title') }}">
             @error('title')
-                <div class="text-danger">{{ $message }}</div>
+                <div class="text-danger"> {{ $message }}</div>
             @enderror
         </div>
 
@@ -22,13 +22,13 @@
             <label for="content">Content</label>
             <textarea id="content" name="content" class="form-control" rows="5">{{ old('content') }}</textarea>
             @error('content')
-                <div class="text-danger">{{ $message }}</div>
+                <div class="text-danger"> {{ $message }}</div>
             @enderror
         </div>
 
         <!-- Submit and Cancel Buttons -->
         <div class="form-group mt-3">
-            <button type="submit" class="btn btn-success">Submit Post</button>
+            <button type="submit" class="btn btn-secondary">Submit Post</button>
             <button type="button" id="cancelCreatePost" class="btn btn-secondary ml-2">Cancel</button>
         </div>
     </form>

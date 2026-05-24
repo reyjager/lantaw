@@ -1,0 +1,19 @@
+@media (max-width: 768px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "main"
+            "footer";
+    }
+
+    aside {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .page-wrapper.toggled .page-content {
+        padding-left: 300px;
+    }
+}

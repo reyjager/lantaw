@@ -12,16 +12,17 @@
 </head>
 
 <body>
-    <div class="wrapper">
-        @include('sidebar.sidebar')
+    <div class="page-wrapper chiller-theme toggled">
+        <nav id="sidebar" class="sidebar-wrapper">
+            @include('sidebar.sidebar')
+        </nav>
 
-        <div id="content">
-            @include('layouts.header')
+        @include('layouts.header')
 
-            <main class="page-content">
-                @include('layouts.main')
-            </main>
-        </div>
+
+        @include('layouts.main')
+
+
     </div>
 </body>
 

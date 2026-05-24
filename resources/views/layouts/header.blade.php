@@ -1,7 +1,11 @@
-<nav class="navbar navbar-expand-sm navbar-light d-flex w-100">
-    <div class="container-fluid m-0 d-flex justify-content-between align-items-center">
-        @include('components.search')
+<div class="page-content header" style="overflow: visible; z-index: 1000;">
+    <div class="container-fluid">
+        <div class="m-0 d-flex justify-content-between align-items-center">
 
-        @include('components.myprofile')
+            @include('components.search')
+
+            @include('components.myprofile')
+        </div>
     </div>
-</nav>
+
+</div>

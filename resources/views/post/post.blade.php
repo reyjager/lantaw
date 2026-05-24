@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="container bg-primary text-white p-4 rounded">
+    <div class="container bg-primary text-white p-4 rounded m-4">
         <h2>Posts</h2>
 
 
@@ -20,10 +20,10 @@
         @if ($posts->isEmpty())
             <p>No posts available.</p>
         @else
-            <ul class="list-group">
+            <ul class="list-group mb-4 bg-dark">
                 @foreach ($posts as $post)
-                    <li class="list-group-item">
-                        <h4>{{ $post->title }}</h4>
+                    <li class="list-group-item mb-4">
+                        <h4> {{ $post->title }}</h4>
                         <p>{{ Str::limit($post->content, 150) }}</p>
                         <small class="text-muted">Posted on {{ $post->created_at->format('M d, Y') }}</small>
 
@@ -33,7 +33,7 @@
                                 <ul class="list-group">
                                     @foreach ($post->comments as $comment)
                                         <li class="list-group-item">
-                                            <p>{{ $comment->content }}</p>
+                                            <p> {{ $comment->content }}</p>
                                             <small class="text-muted">
                                                 Commented by User #{{ $comment->user_id }} on
                                                 {{ $comment->created_at->format('M d, Y') }}
@@ -50,7 +50,7 @@
                             <!-- Comment Form -->
 
 
-                            <form action="{{ route('post.comment') }}" method="POST" class="mt-3">
+                            {{-- <form action="{{ route('post.comment') }}" method="POST" class="mt-3">
                                 @csrf
                                 <input type="hidden" name="post_id" value="{{ $post->post_id }}">
                                 <div class="form-group">
@@ -67,13 +67,14 @@
                                 </div>
                                 <button type="submit" class="btn btn-primary mt-2">Submit Comment<p>Post ID:
                                         {{ $post->post_id }}</p></button>
-                            </form>
+                            </form> --}}
                         </div>
                     </li>
                 @endforeach
             </ul>
         @endif
     </div>
+
 
 
     <!-- JavaScript to Show/Hide Create Post Form -->
